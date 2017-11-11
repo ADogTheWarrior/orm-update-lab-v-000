@@ -2,6 +2,7 @@ require_relative "../config/environment.rb"
 
 class Student
   attr_accessor :name, :grade
+  attr_reader :id
 
   def self.create_table
     sql = <<-SQL
@@ -11,11 +12,20 @@ class Student
       grade TEXT
     )
     SQL
-    
+
     DB[:conn].execute(sql)
   end
 
   def self.drop_table
     DB[:conn].execute("DROP TABLE IF EXISTS students")
+  end
+
+  def save
+  end
+
+  def self.create
+  end
+
+  def self.new_from_db
   end
 end
