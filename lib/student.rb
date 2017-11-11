@@ -8,7 +8,7 @@ class Student
     @name = name
     @grade = grade
   end
-  
+
   def self.create_table
     sql = <<-SQL
     CREATE TABLE IF NOT EXISTS students (
